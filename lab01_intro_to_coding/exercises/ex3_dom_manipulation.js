@@ -19,6 +19,7 @@ const viz = document.body.querySelector(".viz");
 const button = document.body.querySelector("#button");
 
 console.log(viz, viz.children);
+viz.innerHTML="";
 
 
 const addChildToViz = () => {
@@ -27,7 +28,6 @@ const addChildToViz = () => {
     const newChild = document.createElement("div");
     newChild.className = "rectangle";
     newChild.style.height = item.sepallength * 20 + "px";
-    viz.innerHTML="";
     viz.appendChild(newChild);
   
 }};
