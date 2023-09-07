@@ -22,15 +22,13 @@ console.log(viz, viz.children);
 viz.innerHTML="";
 
 
-const addChildToViz = () => {
-  if (data.length > 0) {
-    const item = data.shift(); 
+const addChildToViz = (data) => {
     const newChild = document.createElement("div");
     newChild.className = "rectangle";
-    newChild.style.height = item.sepallength * 20 + "px";
+    newChild.style.height =  data * 20 + "px";
     viz.appendChild(newChild);
   
-}};
+};
 
 // Task
 // Modify index.html to make this event listener work
@@ -39,19 +37,21 @@ button.addEventListener("click", addChildToViz);
 // Task
 // Where can you see the results of the console.log below? How is it different from in previous exercises?
 
+
 function drawIrisData() {
   
   window
     .fetch("./iris_json.json")
-    .then(classData => classData.json())
-    .then(classData => {
-      data=classData;
+    
+    .then(data => data.json())
+    .then(data => {
       // use for each to get the each data and draw directly
-      console.log(data)
+      data.forEach(i => {
+        addChildToViz(i.sepallength)
+      });
+      console.log(i)
+      console.log(i.sepallength)
         });
 }
-drawIrisData();
 
-// Task
-// Modify the code above to visualize the Iris dataset in the preview of index.html.
-// Feel free to add additional CSS properties in index.html, or using JavaScript, as you see fit.
+drawIrisData();
