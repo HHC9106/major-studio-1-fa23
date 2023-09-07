@@ -20,12 +20,17 @@ const button = document.body.querySelector("#button");
 
 console.log(viz, viz.children);
 
+
 const addChildToViz = () => {
-  const newChild = document.createElement("div");
-  newChild.className = "rectangle";
-  newChild.style.height = Math.random() * 100 + "px";
-  viz.appendChild(newChild);
-};
+  if (data.length > 0) {
+    const item = data.shift(); 
+    const newChild = document.createElement("div");
+    newChild.className = "rectangle";
+    newChild.style.height = item.sepallength * 20 + "px";
+    viz.innerHTML="";
+    viz.appendChild(newChild);
+  
+}};
 
 // Task
 // Modify index.html to make this event listener work
@@ -35,14 +40,16 @@ button.addEventListener("click", addChildToViz);
 // Where can you see the results of the console.log below? How is it different from in previous exercises?
 
 function drawIrisData() {
+  
   window
     .fetch("./iris_json.json")
-    .then(data => data.json())
-    .then(data => {
-      console.log(data);
-    });
+    .then(classData => classData.json())
+    .then(classData => {
+      data=classData;
+      // use for each to get the each data and draw directly
+      console.log(data)
+        });
 }
-
 drawIrisData();
 
 // Task

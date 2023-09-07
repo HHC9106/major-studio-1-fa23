@@ -32,9 +32,9 @@ var years = [
 
 // Task 1
 // Console log the length of each Array
-console.log(names.length)
-console.log(URLs.length)
-console.log(years.length)
+console.log(/* COMPLETE ME */)
+console.log(/* COMPLETE ME */)
+console.log(/* COMPLETE ME */)
 
 
 
@@ -44,10 +44,9 @@ var newName = "The International Center of Photography"
 var newURL = "icp.org"
 var newYear = 1974
 
-names.push(newName);
-URLs[URLs.length] = newURL; 
-years = years.concat([newYear]);
-
+names.push(/* COMPLETE ME */);
+URLs[/* COMPLETE ME */] = newURL;
+years = years.concat(/* COMPLETE ME */);
 
 // Task 3
 // construct an Object out of our three Arrays
@@ -59,12 +58,11 @@ var result = {
   }
 }
 
-// setting an empty object
 var museums = {};
 for (var i = 0; i < names.length; i++) {
-  var currentName = names[i];
-  var currentURL = URLs[i];
-  var currentYear = years[i];
+  var currentName = names[/* COMPLETE ME */];
+  /* COMPLETE ME */ = URLs[i];
+  var currentYear = /* COMPLETE ME */;
 
   museums[currentName] = {};
   museums[currentName]["URL"] = currentURL;
@@ -74,15 +72,13 @@ for (var i = 0; i < names.length; i++) {
 console.log('museums', museums)
 
 var museums2 = {};
-names.forEach(function(n,i) {
+names.forEach(function(/* COMPLETE ME*/) {
   museums2[n] = {};
 
   var currentURL = URLs[i];
   var currentYear = years[i];
 
-  //without space in the text, cna use .name 
   museums2[n].URL = currentURL;
-  //including space, use [name]
   museums2[n]["year"] = currentYear;
 });
 
@@ -91,14 +87,11 @@ console.log('museums2', museums2)
 // Task
 // Write a function to add a new museum object, with properties URL and year, to an existing museums object. Call it on museums2
 function addAMuseum(museums, newName, newURL, newYear){
-  museums[newName]=[];
-  museums[newName].URL=newURL;
-  museums[newName]["year"]=newYear;
-
+  /* COMPLETE ME */
 
   return museums;
 }
 
-addAMuseum(museums2,'NGA','nga.gov',2023);
+addAMuseum(/* COMPLETE ME */);
 
 console.log('museums2', museums2);
